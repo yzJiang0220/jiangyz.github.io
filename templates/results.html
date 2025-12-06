@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Searching for "{{ term }}"... Found {{ count }} jobs.</h1>
+    <a href="/">Go Back</a>
+    <hr>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Site</th>
+                <th>Company</th>
+                <th>Job Title</th>
+                <th>Apply</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{ job.site }}</td>
+                <td>{{ job.company }}</td>
+                <td>{{ job.title }}</td>
+                <td><a href="{{ job.link }}" target="_blank">Link</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
